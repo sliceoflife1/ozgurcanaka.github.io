@@ -1,0 +1,95 @@
+/* style.css - Özel Light Cyber / Brutalist Stil Dosyası */
+
+:root {
+    --cyber-orange: #ff4d00;
+    --cyber-black: #0f172a;
+}
+
+/* Temel ayarlar: Saf ve keskin hatlar */
+* {
+    box-sizing: border-box;
+}
+
+/* Seçim efekti ve Scrollbar optimizasyonları */
+::selection {
+    background-color: #ff4d00; /* Vurgu Turuncu */
+    color: #ffffff;
+}
+::-moz-selection {
+    background-color: #ff4d00;
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+    border-left: 1px solid #e2e8f0;
+}
+::-webkit-scrollbar-thumb {
+    background: #0f172a;
+    border-radius: 0px; /* Keskin köşeler (Frontend-specialist rule) */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4d00;
+}
+
+/* Animasyonlar: Yukarı Kayarak Giriş */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+/* Tipografi mikro dengelemeleri */
+h1 {
+    /* Dev siber kelimelerde harf arası azaltılır */
+    letter-spacing: -0.05em; 
+}
+.font-mono {
+    letter-spacing: -0.02em;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Custom Utilities for Security/Consistency */
+.bg-cyber-orange { background-color: var(--cyber-orange) !important; }
+.text-cyber-orange { color: var(--cyber-orange) !important; }
+.border-cyber-orange { border-color: var(--cyber-orange) !important; }
+
+/* Parazit (Grain) Dokusu (Ekstra derinlik için) */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
