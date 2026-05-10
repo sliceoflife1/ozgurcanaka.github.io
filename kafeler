@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İzmir Karşıyaka & Çiğli Çalışma Kafeleri</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --badge-karsiyaka: #dbeafe;
+            --badge-karsiyaka-text: #1e40af;
+            --badge-cigli: #dcfce7;
+            --badge-cigli-text: #166534;
+            --star-color: #fbbf24;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.karsiyaka { background-color: var(--badge-karsiyaka); color: var(--badge-karsiyaka-text); }
+        .badge.cigli { background-color: var(--badge-cigli); color: var(--badge-cigli-text); }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background-color: #f9fafb;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .stat-item i.fa-star { color: var(--star-color); }
+        .stat-item i.fa-comment { color: #9ca3af; }
+        .stat-item i.fa-route { color: #ef4444; }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-body h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .card-footer {
+            padding: 1.5rem;
+            padding-top: 0;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.875rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Odaklanma Noktaları ☕📚</h1>
+        <p>Karşıyaka ve Çiğli'de ders çalışmaya en uygun, Google'da en çok yorum alan mekanlar. (Başlangıç: 6007/8. Sokak)</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <!-- KART 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Pan Kitabevi Ve Cafe</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.5</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 2534 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~2.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Mekanın genişliği ve kitap kokuları arasında çalışmanın oldukça motive edici olduğu vurgulanıyor. Sınav dönemlerinde kalabalık olabilse de ferah alanları ve sessizliğiyle uzun saatler odaklanmak için Karşıyaka'nın en ideallerinden.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Pan+Kitabevi+Ve+Cafe,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Coffee LAB Löhner Köşkü</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.3</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 1078 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~2.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Tarihi dokusu ve geniş odalarıyla öğrencilerin favorisi. Priz imkanının fazla olması bilgisayarla çalışanlar için büyük avantaj sağlarken, yoğun saatlerde ortamda biraz uğultu olabiliyor.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Coffee+LAB+Karşıyaka+Löhner+Köşkü,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Philia Lifestyle & Coffee Co.</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.5</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 934 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~2.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Yorumlarda sakin atmosferi ve rahatlatıcı müzikleri öne çıkıyor. Ziyaretçi kitlesi genelde bilgisayarından iş yapan, not çıkaran kişilerden oluştuğu için ders çalışmaya son derece elverişli.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Philia+Lifestyle+Coffee+Co,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 4 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Kahveperest</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.5</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 802 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~1.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Geniş, rahat masaları ve aydınlık ortamı sayesinde grup çalışmaları veya bireysel etütler için çok uygun. Masa başında uzun süre oturmanın problem yaratmadığı sıklıkla ifade edilmiş.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Kahveperest,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 5 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Uggla Coffee</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.5</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 786 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~2.0 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>İnternet bağlantısının stabilitesi ve laptop dostu masa düzeniyle öne çıkıyor. Bahçe kısmı sosyalleşmek, iç kısımları ise dikkati dağıtmadan ders çalışmak için tercih ediliyor.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Uggla+Coffee,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 6 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge cigli">Çiğli</span>
+                    <h2 class="card-title">Comolokko İzmir</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.2</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 509 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~11.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Eğlence ve oyun merkezi konseptine sahip. Derin odaklanma gerektiren sessiz bir çalışmadan çok, kalabalık grup buluşmaları veya molalar esnasında çalışmak için uygun. Ses seviyesi genelde yüksek.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Comolokko,+Çiğli,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 7 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge cigli">Çiğli</span>
+                    <h2 class="card-title">Berry Coffee Company</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 3.8</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 467 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~11.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Üniversiteye yakınlığı nedeniyle tam bir öğrenci dinamiğine sahip. Sınav haftalarında gece geç saatlere kadar masalarda ders çalışan, proje çizen insanlarla dolu oluyor.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Berry+Coffee+Company,+Çiğli,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 8 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">Gracia Coffee Co.</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.9</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 451 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~1.8 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Yüksek puanlı, nitelikli kahve sunan mekan. Oldukça butik ve gürültüden uzak yapısı sebebiyle, kahvesini alıp sessizce köşesinde tez/ödev yazmak isteyenlerin favorisi.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Gracia+Coffee+Co,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 9 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge karsiyaka">Karşıyaka</span>
+                    <h2 class="card-title">The Leaf Coffee Shop</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 4.7</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 401 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~1.5 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Mahalle arasında kalmasının verdiği avantajla ekstra bir dinginlik sunuyor. İçeride ders çalışanlar için rahatsız edilmeden saatlerce odaklanılabilen özel alan hissiyatı var.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=The+Leaf+Coffee+Shop,+Karşıyaka,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+            <!-- KART 10 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="badge cigli">Çiğli</span>
+                    <h2 class="card-title">Artemis Coffee Art</h2>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item"><i class="fa-solid fa-star"></i> 3.9</div>
+                    <div class="stat-item"><i class="fa-solid fa-comment"></i> 391 Yorum</div>
+                    <div class="stat-item"><i class="fa-solid fa-route"></i> ~11.0 km</div>
+                </div>
+                <div class="card-body">
+                    <h4><i class="fa-solid fa-book-open"></i> Çalışma Ortamı</h4>
+                    <p>Öğrencilerin mesken tuttuğu yerlerden biri. Prizlere yakın masalar erken dolabilse de, genel olarak rahatça etüt yapmak ve laptop başında verimli çalışmak için tatmin edici.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=6007%2F8.+Sokak%2C+Kar%C5%9F%C4%B1yaka%2C+%C4%B0zmir&destination=Artemis+Coffee+Art,+Çiğli,+İzmir" target="_blank" class="btn">
+                        <i class="fa-solid fa-location-arrow"></i> Yol Tarifi Al (Git)
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
