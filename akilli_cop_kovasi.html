@@ -1,3 +1,8 @@
+Harika bir ekleme! Videonun sayfada estetik ve mobil uyumlu (responsive) görünmesi için CSS tarafına küçük bir `video-container` sınıfı ekledim ve videoyu "Proje Hakkında" bölümünün hemen üstüne, en dikkat çekici yere özel bir bölüm olarak yerleştirdim.
+
+Aşağıdaki kodu kopyalayıp mevcut `akilli_cop_kovasi.html` dosyanızın içeriğiyle tamamen değiştirebilirsiniz:
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -53,6 +58,26 @@
             display: block;
             margin: 20px auto;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* YouTube Video Embed için Responsive Tasarım */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Ekran Oranı */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         .warning-box {
             background-color: #fff3cd;
@@ -113,9 +138,16 @@
     <header>
         <h1>Raspberry Pi Pico 2 W ile Akıllı Çöp Kovası</h1>
         <p>Sistem Geliştirme Yaşam Döngüsü (SDLC) ile tasarlanmış otonom, temassız ve hijyenik IoT projesi.</p>
-        <!-- Ana Görsel (Thumbnail) -->
         <img src="image_cbe063.jpg" alt="Akıllı Çöp Kovası Projesi Kapak Görseli">
     </header>
+
+    <div class="container">
+        <h2>Proje İnceleme Videosu</h2>
+        <p>Projenin donanımsal kurulumunu, karşılaşılan teknik zorlukların (servo cızırtısı, akım yetersizliği) nasıl çözüldüğünü ve sistemin çalışma anını aşağıdaki YouTube videomuzdan detaylıca izleyebilirsiniz:</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/A3j0wSeXWXM" title="Raspberry Pi Pico 2 W ile Akıllı Çöp Kovası Yapımı" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <div class="container">
         <h2>Proje Hakkında</h2>
@@ -135,7 +167,6 @@
 
     <div class="container">
         <h2>Devre Şeması ve Pin Bağlantıları</h2>
-        <!-- Şema Görseli -->
         <img src="23123.jpg" alt="Devre Şeması ve Pinout">
         
         <table>
@@ -287,3 +318,5 @@ while True:
 
 </body>
 </html>
+
+```
