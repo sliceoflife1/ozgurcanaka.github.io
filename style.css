@@ -65,6 +65,13 @@ body {
     overflow-x: hidden;
 }
 
+/* UI/UX İyileştirmeleri: Temiz Focus Stilleri */
+:focus-visible {
+    outline: 2px dashed var(--cyber-orange);
+    outline-offset: 4px;
+    transition: outline-offset 0.2s ease;
+}
+
 /* Custom Utilities for Security/Consistency */
 .bg-cyber-orange { background-color: var(--cyber-orange) !important; }
 .text-cyber-orange { color: var(--cyber-orange) !important; }

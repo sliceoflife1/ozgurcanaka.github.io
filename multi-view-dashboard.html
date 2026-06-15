@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth bg-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-View Dashboard | Project Case Study</title>
+    
+    <meta name="description" content="Multi-View Dashboard Chrome eklentisinin detaylı proje sayfası. Özellikler, video incelemesi ve teknolojik altyapı.">
+    <meta name="author" content="Özgür Can Aka">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Multi-View Dashboard | Project Case Study">
+    <meta property="og:description" content="Kullanıcıların birden fazla sekmeyi tek ekranda yönetmesini sağlayan akıllı eklenti.">
+    <meta property="og:image" content="assets/images/promo_marquee_1_1280.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons & Fonts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Core Logic & Config -->
+    <script src="js/script.js" defer></script>
+</head>
+<body class="bg-cyber-light text-cyber-text font-sans antialiased selection:bg-accent-cyan selection:text-white">
+    
+    <!-- Light Mode Technical Grid Background Effect -->
+    <div class="fixed inset-0 z-0 opacity-[0.2] pointer-events-none mix-blend-multiply" 
+         style="background-image: linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(to right, #cbd5e1 1px, transparent 1px); background-size: 80px 80px;">
+    </div>
+    
+    <!-- Subtle technical accents (Plus signs at intersections) -->
+    <div class="fixed top-[160px] left-[160px] w-2 h-2 text-accent-cyan opacity-40 z-0 pointer-events-none font-mono leading-none">+</div>
+    <div class="fixed top-[320px] right-[240px] w-2 h-2 text-accent-orange opacity-40 z-0 pointer-events-none font-mono leading-none">+</div>
+
+    <div class="relative z-10 w-full max-w-[1400px] mx-auto min-h-screen flex flex-col pt-12 md:pt-24 px-6 sm:px-12">
+        
+        <!-- Language Switcher & Navigation Header -->
+        <nav class="fixed top-6 right-6 sm:right-12 z-50 flex items-center gap-4 bg-white/80 backdrop-blur-md border border-cyber-border p-1 shadow-sm">
+            <a href="index.html" class="px-4 py-2 font-mono text-xs font-bold tracking-widest text-cyber-text border-r border-cyber-border hover:bg-cyber-text hover:text-white transition-colors uppercase">
+                <span data-en="< BACK" data-tr="< GERİ">< GERİ</span>
+            </a>
+            <button id="lang-switcher" class="group relative px-4 py-2 font-mono text-xs font-bold tracking-widest text-cyber-text overflow-hidden border-r border-cyber-border hover:text-white transition-colors">
+                <span id="current-lang" class="relative z-10">TR</span>
+                <span class="absolute inset-0 bg-accent-orange translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></span>
+            </button>
+            <div class="px-4 py-2 text-[10px] font-mono text-gray-400 uppercase tracking-widest hidden sm:block">
+                Project_ID: MV_DASHBOARD
+            </div>
+        </nav>
+
+        <!-- Project Hero Header -->
+        <header class="mb-16 relative animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none">
+                <span class="w-2 h-2 rounded-none bg-accent-cyan animate-pulse"></span>
+                <span data-en="STATUS: LIVE" data-tr="DURUM: AKTİF">STATUS: LIVE</span>
+            </div>
+            
+            <h1 class="text-5xl sm:text-7xl lg:text-[6rem] font-black tracking-tighter leading-[0.9] text-cyber-text mb-4 uppercase drop-shadow-sm mix-blend-darken">
+                MULTI-VIEW <br/> 
+                <span class="text-accent-cyan">DASHBOARD.</span>
+            </h1>
+            
+            <p class="max-w-2xl text-cyber-muted text-lg md:text-xl font-light leading-relaxed border-l-2 border-accent-cyan pl-6 mt-8">
+                <strong class="font-bold text-cyber-text" data-en="A Chrome Extension for Ultimate Multitasking." data-tr="Gelişmiş Çoklu Görev için Bir Chrome Eklentisi.">A Chrome Extension for Ultimate Multitasking.</strong><br> 
+                <span data-en="Monitor multiple feeds, auto-refresh panels, and organize your digital workflow efficiently." data-tr="Birden fazla akışı izleyin, panelleri otomatik yenileyin ve dijital iş akışınızı verimli bir şekilde düzenleyin.">Monitor multiple feeds, auto-refresh panels, and organize your digital workflow efficiently.</span>
+            </p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="w-full flex flex-col gap-16 mb-32 z-10 animate-fade-in-up" style="animation-delay: 0.15s;">
+            
+            <!-- Big Hero Image Section -->
+            <section class="w-full relative group">
+                <div class="border-[1px] border-cyber-border shadow-[12px_12px_0px_#cbd5e1] p-2 bg-white group-hover:shadow-[8px_8px_0px_#06b6d4] transition-shadow duration-500">
+                    <div class="absolute -top-4 -left-4 bg-black text-white font-mono text-xs px-3 py-1 font-bold z-20">VISUAL_ASSET</div>
+                    <div class="overflow-hidden bg-cyber-light w-full">
+                        <img src="assets/images/promo_marquee_1_1280.png" alt="Multi-View Dashboard Mockup" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video & Features Split -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8 border-t-[1px] border-cyber-border pt-12">
+                
+                <!-- Video Player (Left Column - 7 col) -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <h3 class="text-xs font-mono font-bold tracking-widest text-cyber-text uppercase flex items-center gap-2">
+                        <i data-lucide="video" class="w-4 h-4 text-accent-cyan"></i> // <span data-en="System Demonstration" data-tr="Sistem Gösterimi">System Demonstration</span>
+                    </h3>
+                    
+                    <div class="border-[1px] border-cyber-border p-2 bg-white shadow-sm relative">
+                        <div class="absolute top-0 left-0 w-2 h-2 bg-black"></div>
+                        <div class="absolute top-0 right-0 w-2 h-2 bg-black"></div>
+                        <div class="absolute bottom-0 left-0 w-2 h-2 bg-black"></div>
+                        <div class="absolute bottom-0 right-0 w-2 h-2 bg-black"></div>
+                        
+                        <div class="relative w-full pb-[56.25%] bg-black overflow-hidden">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full border-0"
+                                src="https://www.youtube.com/embed/OQ0y6DZrXJw?autoplay=0&rel=0&modestbranding=1" 
+                                title="Multi-View Dashboard Video" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Tech Stack (Right Column - 5 col) -->
+                <div class="lg:col-span-5 flex flex-col gap-8">
+                    <h3 class="text-xs font-mono font-bold tracking-widest text-cyber-text uppercase flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-4 h-4 text-accent-orange"></i> // <span data-en="Technical Specifications" data-tr="Teknik Özellikler">Technical Specifications</span>
+                    </h3>
+                    
+                    <div class="border-2 border-cyber-text p-6 bg-white shadow-[6px_6px_0px_#111]">
+                        <ul class="space-y-6">
+                            <li class="group border-l-2 border-accent-cyan pl-4">
+                                <h4 class="font-bold text-cyber-text text-md uppercase" data-en="Dynamic Tiling System" data-tr="Dinamik Döşeme Sistemi">Dynamic Tiling System</h4>
+                                <p class="text-sm text-cyber-muted mt-2" 
+                                   data-en="Split your browser window into resizable, independent panels to monitor diverse web sources in real-time." 
+                                   data-tr="Farklı web kaynaklarını gerçek zamanlı izlemek için tarayıcı pencerenizi yeniden boyutlandırılabilir, bağımsız panellere bölün.">
+                                    Split your browser window into resizable, independent panels to monitor diverse web sources in real-time.
+                                </p>
+                            </li>
+                            <li class="group border-l-2 border-accent-cyan pl-4">
+                                <h4 class="font-bold text-cyber-text text-md uppercase" data-en="Auto-Refresh Logic" data-tr="Otomatik Yenileme Mantığı">Auto-Refresh Logic</h4>
+                                <p class="text-sm text-cyber-muted mt-2" 
+                                   data-en="Customizable timer intervals for each panel. Automatically reload pages to stay updated without manual intervention." 
+                                   data-tr="Her panel için özelleştirilebilir zamanlayıcı aralıkları. Manuel müdahale olmadan güncel kalmak için sayfaları otomatik olarak yeniden yükleyin.">
+                                    Customizable timer intervals for each panel. Automatically reload pages to stay updated without manual intervention.
+                                </p>
+                            </li>
+                            <li class="group border-l-2 border-accent-cyan pl-4">
+                                <h4 class="font-bold text-cyber-text text-md uppercase" data-en="Stealth Dark Mode UI" data-tr="Karanlık Mod Arayüzü">Stealth Dark Mode UI</h4>
+                                <p class="text-sm text-cyber-muted mt-2" 
+                                   data-en="A highly polished, distraction-free interface optimized for long monitoring sessions and productivity." 
+                                   data-tr="Uzun izleme oturumları ve üretkenlik için optimize edilmiş, son derece parlak, dikkat dağıtmayan bir arayüz.">
+                                    A highly polished, distraction-free interface optimized for long monitoring sessions and productivity.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center bg-cyber-text px-6 py-4 font-bold text-white overflow-hidden hover:text-black transition-all duration-300 uppercase shadow-sm mt-4">
+                        <span class="absolute inset-0 bg-accent-cyan -translate-x-[100%] group-hover:translate-x-[0%] transition-transform duration-300 ease-in-out z-0"></span>
+                        <div class="relative z-10 flex items-center gap-3">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <span data-en="Install Extension" data-tr="Eklentiyi Kur">Install Extension</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Minimal Brutalist Footer -->
+        <footer class="mt-auto border-t-[4px] border-cyber-text pt-8 pb-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-sm">
+                    <h3 class="text-2xl font-black tracking-tighter mb-4 text-cyber-text uppercase" data-en="Connect." data-tr="İletişim.">Connect.</h3>
+                    <p class="text-sm text-cyber-muted font-mono mb-6 uppercase" 
+                       data-en="Consultancy on intelligence analysis, digital operation architecture, and cyber security authorities." 
+                       data-tr="İstihbarat analizleri, dijital operasyon mimarisi ve siber güvenlik otoriteleri hakkında danışmanlık.">
+                        Consultancy on intelligence analysis, digital operation architecture, and cyber security authorities.
+                    </p>
+                    
+                    <div class="flex flex-col gap-2 mb-6 md:mb-0">
+                        <div class="flex items-center gap-3 text-[10px] font-mono text-cyber-muted font-bold border border-cyber-border py-2 px-3 bg-white w-max">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-accent-cyan"></i>
+                            <span data-en="VERIFIED CYBER EXPERT &bull; 13+ YEARS EXP" data-tr="DOĞRULANMIŞ SİBER UZMAN &bull; 13+ YIL TECRÜBE">VERIFIED CYBER EXPERT &bull; 13+ YEARS EXP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4 md:gap-8 font-mono text-sm font-bold flex-wrap uppercase">
+                    <a href="mailto:ozgurcanaka@gmail.com" class="relative group tracking-wider hover:text-accent-orange transition-colors uppercase">
+                        <span class="inline-block transform group-hover:-translate-y-1 transition-transform uppercase">E_MAIL</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="relative group tracking-wider hover:text-accent-indigo transition-colors uppercase">
+                        <span class="inline-block transform group-hover:-translate-y-1 transition-transform uppercase">LINKEDIN</span>
+                    </a>
+                    <a href="https://github.com/ozgurcanaka" target="_blank" class="relative group tracking-wider hover:text-accent-cyan transition-colors uppercase">
+                        <span class="inline-block transform group-hover:-translate-y-1 transition-transform uppercase">GITHUB</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full flex justify-between items-center mt-24 text-[10px] font-mono text-gray-400 uppercase tracking-[0.2em] uppercase">
+                <span>© 2026 // ÖZGÜR CAN AKA</span>
+                <span>SYS_READY // V.3.0 // i18n_ENABLED</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts Layer -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
