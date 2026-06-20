@@ -2,29 +2,38 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Video, Cpu, Download, ShieldCheck, Mail, Award } from "lucide-react";
+import { ArrowLeft, Video, Cpu, Download, ShieldCheck } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import { Lang, languages, homeTranslations } from "@/app/translations";
+import { subpageTranslations } from "@/app/subpageTranslations";
 
 export default function MultiView() {
-  const [lang, setLang] = useState<"tr" | "en">("en");
+  const [lang, setLang] = useState<Lang>("en");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const savedLang = localStorage.getItem("portfolio-lang");
-    if (savedLang === "tr" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang) {
+      if (languages.some((l) => l.code === savedLang)) {
+        setLang(savedLang as Lang);
+      }
     }
   }, []);
 
-  const toggleLang = () => {
-    const newLang = lang === "en" ? "tr" : "en";
-    setLang(newLang);
-    localStorage.setItem("portfolio-lang", newLang);
+  const selectLang = (code: Lang) => {
+    setLang(code);
+    localStorage.setItem("portfolio-lang", code);
   };
 
-  const t = (en: string, tr: string) => {
-    if (!mounted) return en;
-    return lang === "en" ? en : tr;
+  const tSub = (key: keyof typeof subpageTranslations) => {
+    if (!mounted) return subpageTranslations[key].en;
+    return subpageTranslations[key][lang] || subpageTranslations[key].en;
+  };
+
+  const tHome = (key: keyof typeof homeTranslations) => {
+    if (!mounted) return homeTranslations[key].en;
+    return homeTranslations[key][lang] || homeTranslations[key].en;
   };
 
   return (
@@ -42,49 +51,44 @@ export default function MultiView() {
       <div className="fixed top-[160px] left-[160px] w-2 h-2 text-accent-cyan opacity-40 z-0 pointer-events-none font-mono leading-none">+</div>
       <div className="fixed top-[320px] right-[240px] w-2 h-2 text-accent-orange opacity-40 z-0 pointer-events-none font-mono leading-none">+</div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto min-h-screen flex flex-col pt-20 md:pt-24 px-6 sm:px-12">
+      <Navbar 
+        lang={lang} 
+        selectLang={selectLang} 
+        backLink="/" 
+        backText={tSub("backToHome")} 
+        projectId="MV_DASHBOARD"
+      />
+
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto min-h-screen flex flex-col pt-24 px-6 sm:px-12">
         
-        {/* Language Switcher & Navigation Header */}
-        <nav className="fixed top-6 right-6 sm:right-12 z-50 flex items-center gap-4 bg-white/80 backdrop-blur-md border border-cyber-border p-1 shadow-sm">
+        {/* Back Link */}
+        <div className="mb-8">
           <Link 
             href="/" 
-            className="px-4 py-2 font-mono text-xs font-bold tracking-widest text-cyber-text border-r border-cyber-border hover:bg-cyber-text hover:text-white transition-colors uppercase"
+            className="inline-flex items-center gap-2 px-4 py-2 font-mono text-xs font-bold border-2 border-cyber-text bg-white text-cyber-text hover:bg-cyber-text hover:text-white transition-all cursor-pointer shadow-[4px_4px_0px_#0f172a] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#0f172a]"
           >
-            {t("< BACK", "< GERİ")}
+            <ArrowLeft className="w-4 h-4" />
+            <span>{tSub("backToHome")}</span>
           </Link>
-          <button 
-            onClick={toggleLang}
-            className="group relative px-4 py-2 font-mono text-xs font-bold tracking-widest text-cyber-text overflow-hidden border-r border-cyber-border hover:text-white transition-colors cursor-pointer"
-          >
-            <span className="relative z-10">{lang === "en" ? "TR" : "EN"}</span>
-            <span className="absolute inset-0 bg-accent-orange translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></span>
-          </button>
-          <div className="px-4 py-2 text-[10px] font-mono text-gray-400 uppercase tracking-widest hidden sm:block">
-            Project_ID: MV_DASHBOARD
-          </div>
-        </nav>
+        </div>
 
         {/* Project Hero Header */}
         <header className="mb-16 relative animate-fade-in-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none">
             <span className="w-2 h-2 rounded-none bg-accent-cyan animate-pulse"></span>
-            <span>{t("STATUS: LIVE", "DURUM: AKTİF")}</span>
+            <span>{tHome("status")}</span>
           </div>
           
           <h1 className="text-5xl sm:text-7xl lg:text-[6rem] font-black tracking-tighter leading-[0.9] text-cyber-text mb-4 uppercase drop-shadow-sm mix-blend-darken">
-            MULTI-VIEW <br/> 
-            <span className="text-accent-cyan">DASHBOARD.</span>
+            {tSub("multiViewTitle")}
           </h1>
           
           <p className="max-w-2xl text-cyber-muted text-lg md:text-xl font-light leading-relaxed border-l-2 border-accent-cyan pl-6 mt-8">
             <strong className="font-bold text-cyber-text">
-              {t("A Chrome Extension for Ultimate Multitasking.", "Gelişmiş Çoklu Görev için Bir Chrome Eklentisi.")}
+              {tSub("multiViewSubtitle")}
             </strong><br /> 
             <span>
-              {t(
-                "Monitor multiple feeds, auto-refresh panels, and organize your digital workflow efficiently.",
-                "Birden fazla akışı izleyin, panelleri otomatik yenileyin ve dijital iş akışınızı verimli bir şekilde düzenleyin."
-              )}
+              {tHome("multiViewSub")}
             </span>
           </p>
         </header>
@@ -112,7 +116,7 @@ export default function MultiView() {
             {/* Video Player */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <h3 className="text-xs font-mono font-bold tracking-widest text-cyber-text uppercase flex items-center gap-2">
-                <Video className="w-4 h-4 text-accent-cyan" /> // <span>{t("System Demonstration", "Sistem Gösterimi")}</span>
+                <Video className="w-4 h-4 text-accent-cyan" /> // <span>{tSub("systemDemo")}</span>
               </h3>
               
               <div className="border-[1px] border-cyber-border p-2 bg-white shadow-sm relative">
@@ -136,36 +140,27 @@ export default function MultiView() {
             {/* Features & Tech Stack */}
             <div className="lg:col-span-5 flex flex-col gap-8">
               <h3 className="text-xs font-mono font-bold tracking-widest text-cyber-text uppercase flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-accent-orange" /> // <span>{t("Technical Specifications", "Teknik Özellikler")}</span>
+                <Cpu className="w-4 h-4 text-accent-orange" /> // <span>{tSub("techSpecs")}</span>
               </h3>
               
               <div className="border-2 border-cyber-text p-6 bg-white shadow-[6px_6px_0px_#111]">
                 <ul className="space-y-6">
                   <li className="group border-l-2 border-accent-cyan pl-4">
-                    <h4 className="font-bold text-cyber-text text-md uppercase">{t("Dynamic Tiling System", "Dinamik Döşeme Sistemi")}</h4>
+                    <h4 className="font-bold text-cyber-text text-md uppercase">{tSub("spec1Title")}</h4>
                     <p className="text-sm text-cyber-muted mt-2">
-                      {t(
-                        "Split your browser window into resizable, independent panels to monitor diverse web sources in real-time.",
-                        "Farklı web kaynaklarını gerçek zamanlı izlemek için tarayıcı pencerenizi yeniden boyutlandırılabilir, bağımsız panellere bölün."
-                      )}
+                      {tSub("spec1Desc")}
                     </p>
                   </li>
                   <li className="group border-l-2 border-accent-cyan pl-4">
-                    <h4 className="font-bold text-cyber-text text-md uppercase">{t("Auto-Refresh Logic", "Otomatik Yenileme Mantığı")}</h4>
+                    <h4 className="font-bold text-cyber-text text-md uppercase">{tSub("spec2Title")}</h4>
                     <p className="text-sm text-cyber-muted mt-2">
-                      {t(
-                        "Customizable timer intervals for each panel. Automatically reload pages to stay updated without manual intervention.",
-                        "Her panel için özelleştirilebilir zamanlayıcı aralıkları. Manuel müdahale olmadan güncel kalmak için sayfaları otomatik olarak yeniden yükleyin."
-                      )}
+                      {tSub("spec2Desc")}
                     </p>
                   </li>
                   <li className="group border-l-2 border-accent-cyan pl-4">
-                    <h4 className="font-bold text-cyber-text text-md uppercase">{t("Stealth Dark Mode UI", "Karanlık Mod Arayüzü")}</h4>
+                    <h4 className="font-bold text-cyber-text text-md uppercase">{tSub("spec3Title")}</h4>
                     <p className="text-sm text-cyber-muted mt-2">
-                      {t(
-                        "A highly polished, distraction-free interface optimized for long monitoring sessions and productivity.",
-                        "Uzun izleme oturumları ve üretkenlik için optimize edilmiş, son derece parlak, dikkat dağıtmayan bir arayüz."
-                      )}
+                      {tSub("spec3Desc")}
                     </p>
                   </li>
                 </ul>
@@ -180,7 +175,7 @@ export default function MultiView() {
                 <span className="absolute inset-0 bg-accent-cyan -translate-x-[100%] group-hover:translate-x-[0%] transition-transform duration-300 ease-in-out z-0"></span>
                 <div className="relative z-10 flex items-center gap-3">
                   <Download className="w-5 h-5" />
-                  <span>{t("Install Extension", "Eklentiyi Kur")}</span>
+                  <span>{tSub("installExtension")}</span>
                 </div>
               </a>
 
@@ -189,7 +184,7 @@ export default function MultiView() {
                   href="/multi-view/privacy" 
                   className="font-mono text-xs text-cyber-muted hover:text-accent-cyan underline"
                 >
-                  {t("Privacy Policy", "Gizlilik Politikası")}
+                  {tSub("privacyPolicy")}
                 </Link>
               </div>
             </div>
@@ -201,18 +196,15 @@ export default function MultiView() {
         <footer className="mt-auto border-t-[4px] border-cyber-text pt-8 pb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div className="max-w-sm">
-              <h3 className="text-2xl font-black tracking-tighter mb-4 text-cyber-text uppercase">{t("Connect.", "İletişim.")}</h3>
+              <h3 className="text-2xl font-black tracking-tighter mb-4 text-cyber-text uppercase">{tHome("connect")}</h3>
               <p className="text-sm text-cyber-muted font-mono mb-6 uppercase">
-                {t(
-                  "Consultancy on intelligence analysis, digital operation architecture, and cyber security authorities.",
-                  "İstihbarat analizleri, dijital operasyon mimarisi ve siber güvenlik otoriteleri hakkında danışmanlık."
-                )}
+                {tHome("connectDesc")}
               </p>
               
               <div className="flex flex-col gap-2 mb-6 md:mb-0">
                 <div className="flex items-center gap-3 text-[10px] font-mono text-cyber-muted font-bold border border-cyber-border py-2 px-3 bg-white w-max">
                   <ShieldCheck className="w-4 h-4 text-accent-cyan" />
-                  <span>{t("VERIFIED CYBER EXPERT &bull; 13+ YEARS EXP", "DOĞRULANMIŞ SİBER UZMAN &bull; 13+ YIL TECRÜBE")}</span>
+                  <span dangerouslySetInnerHTML={{ __html: tHome("verifiedExpert") }} />
                 </div>
               </div>
             </div>
