@@ -18,6 +18,28 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title: "Özgür Can Aka | Senior Cybercrime Investigator & AI Strategist",
+    description: "Kıdemli Siber Suçlar Araştırmacısı ve Yapay Zeka Stratejisti Özgür Can Aka'nın profesyonel portfolyosu. Siber Güvenlik, Adli Bilişim, Blockchain ve AI Çözümleri.",
+    url: "https://ozgurcanaka.me",
+    siteName: "Özgür Can Aka Portfolio",
+    images: [
+      {
+        url: "https://ozgurcanaka.me/assets/images/profile.png",
+        width: 800,
+        height: 800,
+        alt: "Özgür Can Aka Profile Image",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Özgür Can Aka | Senior Cybercrime Investigator & AI Strategist",
+    description: "Kıdemli Siber Suçlar Araştırmacısı ve Yapay Zeka Stratejisti Özgür Can Aka'nın profesyonel portfolyosu. Siber Güvenlik, Adli Bilişim, Blockchain ve AI Çözümleri.",
+    images: ["https://ozgurcanaka.me/assets/images/profile.png"],
+  },
 };
 
 export default function RootLayout({

@@ -55,12 +55,12 @@ export default function Home() {
 
         {/* MASSIVE TYPOGRAPHIC HERO */}
         <header className="mb-16 md:mb-32 relative animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none">
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-10 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none">
             <span className="w-2 h-2 rounded-none bg-accent-orange animate-pulse"></span>
             <span>{t("status")}</span>
           </div>
           
-          <h1 className="text-4xl sm:text-7xl lg:text-[8rem] font-black tracking-tighter leading-[0.8] text-cyber-text mb-4 uppercase drop-shadow-sm mix-blend-darken">
+          <h1 className="text-4xl sm:text-7xl lg:text-[8rem] font-black tracking-tighter leading-[0.8] text-cyber-text mb-4 uppercase drop-shadow-sm mix-blend-darken mt-4">
             Özgür <br className="hidden sm:block"/> 
             <span className="text-cyber-text">Can <span className="text-accent-orange">AKA</span></span>
           </h1>

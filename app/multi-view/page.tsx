@@ -102,7 +102,7 @@ export default function MultiView() {
               <div className="absolute -top-4 -left-4 bg-black text-white font-mono text-xs px-3 py-1 font-bold z-20">VISUAL_ASSET</div>
               <div className="overflow-hidden bg-cyber-light w-full">
                 <img 
-                  src="/assets/images/promo_marquee_1_1280.png" 
+                  src="/assets/images/IMRGOkSkS1gMQ.png" 
                   alt="Multi-View Dashboard Mockup" 
                   className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
                 />
