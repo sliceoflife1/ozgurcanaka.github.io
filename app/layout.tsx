@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Özgür Can Aka | Senior Cybercrime Investigator & AI Strategist",
   description: "Kıdemli Siber Suçlar Araştırmacısı ve Yapay Zeka Stratejisti Özgür Can Aka'nın profesyonel portfolyosu. Siber Güvenlik, Adli Bilişim, Blockchain ve AI Çözümleri.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
   openGraph: {
     title: "Özgür Can Aka | Senior Cybercrime Investigator & AI Strategist",
