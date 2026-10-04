@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   GraduationCap, Mail, Fingerprint, Cpu, Link as LinkIcon, 
-  ShieldAlert, Layout, ArrowRight, ShieldCheck, Award 
+  ShieldAlert, Layout, ArrowRight, ShieldCheck, Award, BookOpen 
 } from "lucide-react";
 import { homeTranslations, Lang, languages } from "./translations";
 import Navbar from "@/components/Navbar";
@@ -225,8 +225,67 @@ export default function Home() {
             <span className="text-xs font-mono text-cyber-muted uppercase">{t("selectedWork")}</span>
           </div>
 
-          {/* The Showcase Item: OxWord */}
+          {/* The Showcase Item: OxReading */}
           <div className="relative bg-white border border-cyber-border p-4 md:p-12 hover:border-black transition-colors shadow-sm overflow-hidden flex flex-col lg:flex-row gap-12 items-center">
+            <div className="w-full lg:w-1/2 order-2 lg:order-1 relative group mt-8 lg:mt-0">
+              <div className="relative w-full border border-cyber-border shadow-[8px_8px_0px_#f8fafc] overflow-hidden bg-cyber-light">
+                <div className="absolute top-3 left-3 px-2 py-1 bg-black/80 text-white text-[10px] font-mono font-bold tracking-widest z-10 backdrop-blur-sm uppercase">SYS_WEB_APP</div>
+                <img 
+                  src="oxreading/preview.png" 
+                  alt="OxReading Platform Preview" 
+                  className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 rounded-[2rem] border-[4px] border-white shadow-xl bg-white z-20 overflow-hidden group-hover:rotate-[-6deg] group-hover:-translate-y-2 transition-all duration-500">
+                <img src="oxreading/icon.png" alt="OxReading Icon" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-start gap-6">
+              <div className="flex items-center gap-3">
+                <div className="px-3 py-1 bg-black text-white text-xs font-mono uppercase font-bold tracking-widest">{t("webPlatform")}</div>
+                <div className="px-3 py-1 border border-cyber-border text-xs font-mono text-cyber-muted">EdTech / Reading</div>
+              </div>
+
+              <h2 className="text-5xl md:text-7xl font-black text-cyber-text tracking-tighter leading-none m-0 uppercase">OxReading.</h2>
+              
+              <p className="text-lg md:text-xl font-medium text-cyber-muted max-w-lg mt-4">
+                <span className="text-accent-orange font-bold">Bilingual Graded Readers</span>{" "}
+                <span>{t("oxreadingSub")}</span>
+              </p>
+              
+              <p className="text-sm text-cyber-text leading-relaxed mt-2 border-l-2 border-gray-200 pl-4 py-2">
+                {t("oxreadingDesc")}
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 w-full border-t border-b border-cyber-border py-4 my-4 font-mono text-xs uppercase">
+                <div>
+                  <span className="text-gray-400 block mb-1 uppercase">PLATFORM</span>
+                  <span className="font-bold">Web (Live), Mobile Ready</span>
+                </div>
+                <div>
+                  <span className="text-gray-400 block mb-1 uppercase">TECH STACK</span>
+                  <span className="font-bold uppercase">React, Supabase, Capacitor</span>
+                </div>
+              </div>
+
+              <a 
+                href="https://oxreading.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden mt-4 hover:border-accent-orange transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
+              >
+                <span className="absolute inset-0 bg-accent-orange translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+                <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
+                  <BookOpen className="w-5 h-5" />
+                  <span>{t("launchPlatform")}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* The Showcase Item: OxWord */}
+          <div className="relative bg-white border border-cyber-border p-4 md:p-12 hover:border-black transition-colors shadow-sm overflow-hidden flex flex-col lg:flex-row gap-12 items-center mt-12">
             <div className="w-full lg:w-1/2 order-2 lg:order-2 relative group mt-8 lg:mt-0">
               <div className="relative w-full border border-cyber-border shadow-[8px_8px_0px_#f8fafc] overflow-hidden bg-cyber-light">
                 <div className="absolute top-3 left-3 px-2 py-1 bg-black/80 text-white text-[10px] font-mono font-bold tracking-widest z-10 backdrop-blur-sm uppercase">SYS_IMG_VIEW</div>
