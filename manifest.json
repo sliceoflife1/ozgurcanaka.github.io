@@ -1,7 +1,7 @@
 {
-  "name": "OxWord - İngilizce Kelime Öğren",
-  "short_name": "OxWord",
-  "description": "İngilizce kelime öğrenmenin en etkili yolu. A1'den C1'e kadar seviyeli kelime eğitimi.",
+  "name": "Kellime - İngilizce Kelime Öğren",
+  "short_name": "Kellime",
+  "description": "Oxford 3000 & 5000 ile kalıcı İngilizce kelime öğrenin. Bilimsel HLR aralıklı tekrar ve akıllı pratikler.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F5F7FA",
