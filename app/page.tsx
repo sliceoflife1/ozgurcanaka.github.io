@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   GraduationCap, Mail, Fingerprint, Cpu, Link as LinkIcon, 
-  ShieldAlert, Layout, ArrowRight, ShieldCheck, Award, BookOpen 
+  ShieldAlert, Layout, ArrowRight, ShieldCheck, Award, BookOpen, Globe 
 } from "lucide-react";
 import { homeTranslations, Lang, languages } from "./translations";
 import Navbar from "@/components/Navbar";
@@ -284,19 +284,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* The Showcase Item: OxWord */}
+          {/* The Showcase Item: Kellime */}
           <div className="relative bg-white border border-cyber-border p-4 md:p-12 hover:border-black transition-colors shadow-sm overflow-hidden flex flex-col lg:flex-row gap-12 items-center mt-12">
             <div className="w-full lg:w-1/2 order-2 lg:order-2 relative group mt-8 lg:mt-0">
               <div className="relative w-full border border-cyber-border shadow-[8px_8px_0px_#f8fafc] overflow-hidden bg-cyber-light">
                 <div className="absolute top-3 left-3 px-2 py-1 bg-black/80 text-white text-[10px] font-mono font-bold tracking-widest z-10 backdrop-blur-sm uppercase">SYS_IMG_VIEW</div>
                 <img 
                   src="oxword_resimler/9.png" 
-                  alt="OxWord Mobile Dashboard" 
+                  alt="Kellime Mobil Arayüzü" 
                   className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 w-24 h-24 md:w-32 md:h-32 rounded-[2rem] border-[4px] border-white shadow-xl bg-white z-20 overflow-hidden group-hover:rotate-[6deg] group-hover:-translate-y-2 transition-all duration-500">
-                <img src="oxword_resimler/ikon.png" alt="OxWord Icon" className="w-full h-full object-cover" />
+                <img src="oxword_resimler/ikon.png" alt="Kellime İkonu" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -306,10 +306,10 @@ export default function Home() {
                 <div className="px-3 py-1 border border-cyber-border text-xs font-mono text-cyber-muted">EdTech / AI</div>
               </div>
 
-              <h2 className="text-5xl md:text-7xl font-black text-cyber-text tracking-tighter leading-none m-0 uppercase">OxWord.</h2>
+              <h2 className="text-5xl md:text-7xl font-black text-cyber-text tracking-tighter leading-none m-0 uppercase">Kellime.</h2>
               
               <p className="text-lg md:text-xl font-medium text-cyber-muted max-w-lg mt-4">
-                <span className="text-accent-orange font-bold">Oxford 5000</span>{" "}
+                <span className="text-accent-orange font-bold">Oxford 3000 & 5000</span>{" "}
                 <span>{t("oxwordSub")}</span>
               </p>
               
@@ -320,26 +320,41 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 w-full border-t border-b border-cyber-border py-4 my-4 font-mono text-xs uppercase">
                 <div>
                   <span className="text-gray-400 block mb-1 uppercase">PLATFORM</span>
-                  <span className="font-bold">Android, Google Play</span>
+                  <span className="font-bold">Web (Live), Android (Google Play)</span>
                 </div>
                 <div>
                   <span className="text-gray-400 block mb-1 uppercase">TECH STACK</span>
-                  <span className="font-bold uppercase">Ionic, TypeScript</span>
+                  <span className="font-bold uppercase">React, Ionic, TypeScript</span>
                 </div>
               </div>
 
-              <a 
-                href="https://play.google.com/store/apps/details?id=com.ozgur.oxword&hl=tr" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden mt-4 hover:border-accent-orange transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
-              >
-                <span className="absolute inset-0 bg-accent-orange translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
-                <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.189 1.189 0 01-.19-.138A1.503 1.503 0 013 21v-3.793L7.207 13l2.829-2.828L5.793 6 3 3V1.5A1.5 1.5 0 013.81 1.09c.47-.468 1.144-.57 1.701-.219zM15 13.207l1.793 1.793-12.983 6.942L6.112 17H6l9-3.793zm1.5-1.5L20 10l-1.5-1v2.707L16.5 11.707zm3.111-4.63l-13.818-6.14.735-.742L18 8v.754l1.611 2.323z"/></svg>
-                  <span>{t("reviewApp")}</span>
-                </div>
-              </a>
+              <div className="flex flex-wrap items-center gap-4 mt-4 w-full">
+                <a 
+                  href="https://kellime.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden hover:border-accent-orange transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
+                >
+                  <span className="absolute inset-0 bg-accent-orange translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+                  <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
+                    <Globe className="w-5 h-5" />
+                    <span>{t("launchKellime")}</span>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.ozgur.oxword&hl=tr" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden hover:border-accent-orange transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
+                >
+                  <span className="absolute inset-0 bg-accent-orange translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+                  <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.189 1.189 0 01-.19-.138A1.503 1.503 0 013 21v-3.793L7.207 13l2.829-2.828L5.793 6 3 3V1.5A1.5 1.5 0 013.81 1.09c.47-.468 1.144-.57 1.701-.219zM15 13.207l1.793 1.793-12.983 6.942L6.112 17H6l9-3.793zm1.5-1.5L20 10l-1.5-1v2.707L16.5 11.707zm3.111-4.63l-13.818-6.14.735-.742L18 8v.754l1.611 2.323z"/></svg>
+                    <span>{t("reviewApp")}</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
