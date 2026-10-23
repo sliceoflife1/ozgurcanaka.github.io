@@ -78,9 +78,26 @@ export default function YbsToplulugu() {
 
         {/* Hero Header */}
         <header className="mb-14 border-b-4 border-cyber-text pb-10 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none">
-            <span className="w-2 h-2 rounded-none bg-accent-orange animate-pulse"></span>
-            <span>{tHome("status")}{" // SYS_DEU_YBS"}</span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-cyber-border bg-white text-xs font-mono text-cyber-text tracking-widest shadow-sm rounded-none w-max">
+              <span className="w-2 h-2 rounded-none bg-accent-orange animate-pulse"></span>
+              <span>{tHome("status")}{" // SYS_DEU_YBS"}</span>
+            </div>
+
+            {/* Official Logo Badge */}
+            <div className="flex items-center gap-3">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 p-1 border-2 border-cyber-text bg-white shadow-[4px_4px_0px_#06b6d4] flex items-center justify-center">
+                <img 
+                  src="/ybs-toplulugu/logo.png" 
+                  alt="DEÜ YBSA Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="font-mono text-xs">
+                <div className="font-bold text-cyber-text">DEÜ YBSA</div>
+                <div className="text-[10px] text-cyber-muted">Yönetim Bilişim Sistemleri Ağı</div>
+              </div>
+            </div>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-cyber-text mb-4 uppercase">
@@ -302,17 +319,21 @@ export default function YbsToplulugu() {
             </div>
           </section>
 
-          {/* Showcase Banner Section */}
-          <section className="bg-white border-2 border-cyber-text p-6 md:p-8 shadow-[6px_6px_0px_#4f46e5]">
-            <h2 className="text-xl sm:text-2xl font-black text-cyber-text mb-4 uppercase border-b-2 border-cyber-border pb-2 flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-accent-indigo" />
-              <span>Platform Görsel Vitrini</span>
-            </h2>
-            <div className="border border-cyber-border p-2 bg-gray-50 my-4 shadow-inner">
+          {/* Showcase Banner Section - Infographic Poster */}
+          <section className="bg-white border-2 border-cyber-text p-6 md:p-10 shadow-[6px_6px_0px_#4f46e5]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-cyber-border pb-4 mb-8 gap-4">
+              <h2 className="text-xl sm:text-2xl font-black text-cyber-text uppercase flex items-center gap-2 m-0">
+                <MessageSquare className="w-5 h-5 text-accent-indigo" />
+                <span>Platform Görsel Vitrini</span>
+              </h2>
+              <span className="text-xs font-mono text-cyber-muted uppercase tracking-widest">INFOGRAPHIC_POSTER // 7 ÇEKİRDEK MODÜL</span>
+            </div>
+
+            <div className="max-w-lg mx-auto border-2 border-cyber-text p-3 bg-gray-50 shadow-[8px_8px_0px_#0f172a] hover:shadow-[12px_12px_0px_#4f46e5] transition-all duration-300">
               <img 
-                src="/ybs-toplulugu/showcase-banner.jpg" 
-                alt="DEÜ YBS Topluluğu Banner" 
-                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                src="/ybs-toplulugu/platform-showcase.jpg" 
+                alt="DEÜ YBS Topluluğu 7 Çekirdek Modül ve Platform Ekosistemi" 
+                className="w-full h-auto object-contain rounded-none"
               />
             </div>
           </section>
