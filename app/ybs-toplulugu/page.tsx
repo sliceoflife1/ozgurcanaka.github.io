@@ -88,7 +88,7 @@ export default function YbsToplulugu() {
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 sm:w-16 sm:h-16 p-1 border-2 border-cyber-text bg-white shadow-[4px_4px_0px_#06b6d4] flex items-center justify-center">
                 <img 
-                  src="/ybs-toplulugu/logo.png" 
+                  src="/ybs-toplulugu/ybsa-logo.png" 
                   alt="DEÜ YBSA Logo" 
                   className="w-full h-full object-contain"
                 />
