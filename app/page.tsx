@@ -471,7 +471,79 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        
+          {/* The Showcase Item: DEÜ YBS Topluluğu */}
+          <div className="relative bg-white border border-cyber-border p-4 md:p-12 hover:border-black transition-colors shadow-sm overflow-hidden flex flex-col lg:flex-row gap-12 items-center mt-12">
+            <div className="w-full lg:w-1/2 order-2 lg:order-1 relative group mt-8 lg:mt-0">
+              <div className="relative w-full border border-cyber-border shadow-[8px_8px_0px_#f8fafc] overflow-hidden bg-cyber-light">
+                <div className="absolute top-3 left-3 px-2 py-1 bg-black/80 text-white text-[10px] font-mono font-bold tracking-widest z-10 backdrop-blur-sm uppercase">SYS_PORTAL_APP</div>
+                <img 
+                  src="ybs-toplulugu/hero-preview.png" 
+                  alt="DEÜ YBS Topluluğu Platform Önizleme" 
+                  className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 rounded-[2rem] border-[4px] border-white shadow-xl bg-white z-20 overflow-hidden group-hover:rotate-[-6deg] group-hover:-translate-y-2 transition-all duration-500 p-2 flex items-center justify-center">
+                <img src="ybs-toplulugu/icon.png" alt="DEÜ YBS Logo" className="w-full h-full object-contain" />
+              </div>
+            </div>
+
+            <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-start gap-6">
+              <div className="flex items-center gap-3">
+                <div className="px-3 py-1 bg-black text-white text-xs font-mono uppercase font-bold tracking-widest">{t("communityPlatform")}</div>
+                <div className="px-3 py-1 border border-cyber-border text-xs font-mono text-cyber-muted">Career / Ecosystem</div>
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-cyber-text tracking-tighter leading-none m-0 uppercase">DEÜ YBS.</h2>
+              
+              <p className="text-lg md:text-xl font-medium text-cyber-muted max-w-lg mt-4">
+                <span className="text-accent-orange font-bold">Talent & Mentorship Hub</span>{" "}
+                <span>{t("ybsPlatformSub")}</span>
+              </p>
+              
+              <p className="text-sm text-cyber-text leading-relaxed mt-2 border-l-2 border-gray-200 pl-4 py-2">
+                {t("ybsPlatformDesc")}
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 w-full border-t border-b border-cyber-border py-4 my-4 font-mono text-xs uppercase">
+                <div>
+                  <span className="text-gray-400 block mb-1 uppercase">PLATFORM</span>
+                  <span className="font-bold">Next.js 16, Vercel (Live)</span>
+                </div>
+                <div>
+                  <span className="text-gray-400 block mb-1 uppercase">TECH STACK</span>
+                  <span className="font-bold uppercase">React 19, Supabase, Tailwind</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 mt-4 w-full">
+                <a 
+                  href="https://deuybs.org.tr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden hover:border-accent-orange transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
+                >
+                  <span className="absolute inset-0 bg-accent-orange translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+                  <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
+                    <Globe className="w-5 h-5" />
+                    <span>{t("launchDeuYbs")}</span>
+                  </div>
+                </a>
+
+                <Link 
+                  href="/ybs-toplulugu" 
+                  className="group relative inline-flex items-center justify-center bg-transparent border-2 border-cyber-text px-8 py-4 font-bold text-cyber-text overflow-hidden hover:border-accent-cyan transition-all duration-300 w-full sm:w-auto uppercase cursor-pointer"
+                >
+                  <span className="absolute inset-0 bg-accent-cyan translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+                  <div className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
+                    <ArrowRight className="w-5 h-5" />
+                    <span>{t("viewDetail")}</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+</section>
 
         {/* Minimal Brutalist Footer */}
         <footer className="mt-auto border-t-[4px] border-cyber-text pt-8 pb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
