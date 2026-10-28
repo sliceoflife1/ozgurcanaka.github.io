@@ -296,7 +296,7 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 w-24 h-24 md:w-32 md:h-32 rounded-[2rem] border-[4px] border-white shadow-xl bg-white z-20 overflow-hidden group-hover:rotate-[6deg] group-hover:-translate-y-2 transition-all duration-500">
-                <img src="oxword_resimler/ikon.png" alt="Kellime İkonu" className="w-full h-full object-cover" />
+                <img src="/oxword_resimler/kellime-icon.png" alt="Kellime İkonu" className="w-full h-full object-cover" />
               </div>
             </div>
 
