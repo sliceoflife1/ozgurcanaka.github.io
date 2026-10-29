@@ -290,7 +290,7 @@ export default function Home() {
               <div className="relative w-full border border-cyber-border shadow-[8px_8px_0px_#f8fafc] overflow-hidden bg-cyber-light">
                 <div className="absolute top-3 left-3 px-2 py-1 bg-black/80 text-white text-[10px] font-mono font-bold tracking-widest z-10 backdrop-blur-sm uppercase">SYS_IMG_VIEW</div>
                 <img 
-                  src="oxword_resimler/9.png" 
+                  src="/oxword_resimler/kellime-showcase.png" 
                   alt="Kellime Mobil Arayüzü" 
                   className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
                 />
